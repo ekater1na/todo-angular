@@ -4,12 +4,12 @@
     <input 
         type="text"
         placeholder="Filter todo by title..."
-        [(ngModel)]="searcgString"
+        [(ngModel)]="searchString"
     >
 </div>    
 
 <ul *ngIf='todosService.todos.length; else noTodos'>
-    <li *ngFor="let todo of todosService.todos | todosFilter: searcgString; let i = index">
+    <li *ngFor="let todo of todosService.todos | todosFilter: searchString; let i = index">
         <span [class.done]='todo.completed'>
             <input type="checkbox" [checked]='todo.complited' (change)='onChange(todo.id)'>
             <strong>{{i+1}}</strong> {{ todo.title }}

@@ -10,7 +10,7 @@ export class TodoFormComponent implements OnInit {
 
   title: string = '';
 
-  constructor(private todosService: TodosService) {
+  constructor(public todosService: TodosService) {
   }
 
   ngOnInit() {
